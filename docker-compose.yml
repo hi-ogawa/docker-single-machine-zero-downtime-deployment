@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  haproxy:
+    image: haproxy:1.4.27
+    ports:
+      - 80:80
+      - 1936:1936
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+
+  web1:
+    build: .
+
+  web2:
+    build: .
